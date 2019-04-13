@@ -1,0 +1,77 @@
+# 65. Valid Number | 有效数字
+
+## Question description
+
+<!--If you want to use the English description, use <p>Validate if a given string can be interpreted as&nbsp;a decimal number.</p>
+
+<p>Some examples:<br />
+<code>&quot;0&quot;</code> =&gt; <code>true</code><br />
+<code>&quot; 0.1 &quot;</code> =&gt; <code>true</code><br />
+<code>&quot;abc&quot;</code> =&gt; <code>false</code><br />
+<code>&quot;1 a&quot;</code> =&gt; <code>false</code><br />
+<code>&quot;2e10&quot;</code> =&gt; <code>true</code><br />
+<code>&quot; -90e3&nbsp; &nbsp;&quot;</code> =&gt; <code>true</code><br />
+<code>&quot; 1e&quot;</code> =&gt; <code>false</code><br />
+<code>&quot;e3&quot;</code> =&gt; <code>false</code><br />
+<code>&quot; 6e-1&quot;</code> =&gt; <code>true</code><br />
+<code>&quot; 99e2.5&nbsp;&quot;</code> =&gt; <code>false</code><br />
+<code>&quot;53.5e93&quot;</code> =&gt; <code>true</code><br />
+<code>&quot; --6 &quot;</code> =&gt; <code>false</code><br />
+<code>&quot;-+3&quot;</code> =&gt; <code>false</code><br />
+<code>&quot;95a54e53&quot;</code> =&gt; <code>false</code></p>
+
+<p><strong>Note:</strong> It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:</p>
+
+<ul>
+	<li>Numbers 0-9</li>
+	<li>Exponent - &quot;e&quot;</li>
+	<li>Positive/negative sign - &quot;+&quot;/&quot;-&quot;</li>
+	<li>Decimal point - &quot;.&quot;</li>
+</ul>
+
+<p>Of course, the context of these characters also matters in the input.</p>
+
+<p><strong>Update (2015-02-10):</strong><br />
+The signature of the <code>C++</code> function had been updated. If you still see your function signature accepts a <code>const char *</code> argument, please click the reload button to reset your code definition.</p>
+ instead-->
+<p>验证给定的字符串是否为数字。</p>
+
+<p>例如:<br>
+<code>&quot;0&quot;</code> =&gt; <code>true</code><br>
+<code>&quot; 0.1 &quot;</code> =&gt; <code>true</code><br>
+<code>&quot;abc&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;1 a&quot;</code> =&gt; <code>false</code><br>
+<code>&quot;2e10&quot;</code> =&gt; <code>true</code></p>
+
+<p><strong>说明:</strong>&nbsp;我们有意将问题陈述地比较模糊。在实现代码之前，你应当事先思考所有可能的情况。</p>
+
+<p><strong>更新于 2015-02-10:</strong><br>
+<code>C++</code>函数的形式已经更新了。如果你仍然看见你的函数接收&nbsp;<code>const char *</code> 类型的参数，请点击重载按钮重置你的代码。</p>
+
+
+
+
+## Solution
+
+Language: **python3**  /  Runtime: 64 ms
+
+```python3
+import re
+
+class Solution:
+    def isNumber(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return bool(re.match(r'^\s*[-+]?(\.\d+|\d+\.?\d*)(e[+-]?\d+)?\s*$', s))
+        
+```
+
+
+
+## Related Links
+
+Question: [LeetCode](https://leetcode.com/problems/valid-number/description/)  /  [LeetCode中国](https://leetcode-cn.com/problems/valid-number/description/)
+
+Solution: [LeetCode](https://leetcode.com/articles/valid-number/)  /  [LeetCode中国](https://leetcode-cn.com/articles/valid-number/)

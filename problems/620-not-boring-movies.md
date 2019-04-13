@@ -1,0 +1,86 @@
+# 620. Not Boring Movies | 有趣的电影
+
+## Question description
+
+<!--If you want to use the English description, use X city opened a new cinema, many people would like to go to this cinema. The cinema also gives out a poster indicating the movies&rsquo; ratings and descriptions.
+<p>Please write a SQL query to output movies with an odd numbered ID and a description that is not &#39;boring&#39;. Order the result by rating.</p>
+
+<p>&nbsp;</p>
+
+<p>For example, table <code>cinema</code>:</p>
+
+<pre>
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   1     | War       |   great 3D   |   8.9     |
+|   2     | Science   |   fiction    |   8.5     |
+|   3     | irish     |   boring     |   6.2     |
+|   4     | Ice song  |   Fantacy    |   8.6     |
+|   5     | House card|   Interesting|   9.1     |
++---------+-----------+--------------+-----------+
+</pre>
+For the example above, the output should be:
+
+<pre>
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   5     | House card|   Interesting|   9.1     |
+|   1     | War       |   great 3D   |   8.9     |
++---------+-----------+--------------+-----------+
+</pre>
+
+<p>&nbsp;</p>
+ instead-->
+<p>某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。</p>
+
+<p>作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为<strong>非</strong>&nbsp;<code>boring</code>&nbsp;(不无聊)&nbsp;的并且<strong> id 为奇数&nbsp;</strong>的影片，结果请按等级 <code>rating</code> 排列。</p>
+
+<p>&nbsp;</p>
+
+<p>例如，下表 <code>cinema</code>:</p>
+
+<pre>
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   1     | War       |   great 3D   |   8.9     |
+|   2     | Science   |   fiction    |   8.5     |
+|   3     | irish     |   boring     |   6.2     |
+|   4     | Ice song  |   Fantacy    |   8.6     |
+|   5     | House card|   Interesting|   9.1     |
++---------+-----------+--------------+-----------+
+</pre>
+
+<p>对于上面的例子，则正确的输出是为：</p>
+
+<pre>
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   5     | House card|   Interesting|   9.1     |
+|   1     | War       |   great 3D   |   8.9     |
++---------+-----------+--------------+-----------+
+</pre>
+
+<p>&nbsp;</p>
+
+
+
+
+## Solution
+
+Language: **mysql**  /  Runtime: 135 ms
+
+```mysql
+SELECT * FROM cinema WHERE description!='boring' AND id%2 ORDER BY rating DESC;
+```
+
+
+
+## Related Links
+
+Question: [LeetCode](https://leetcode.com/problems/not-boring-movies/description/)  /  [LeetCode中国](https://leetcode-cn.com/problems/not-boring-movies/description/)
+
+Solution: [LeetCode](https://leetcode.com/articles/not-boring-movies/)  /  [LeetCode中国](https://leetcode-cn.com/articles/not-boring-movies/)
